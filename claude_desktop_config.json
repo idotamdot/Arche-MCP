@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+      "arche-mcp": {
+        "command": "npx",
+        "args": ["tsx", "/absolute/path/to/Arche-MCP/src/index.ts"]
+      }
+    }
+  }
