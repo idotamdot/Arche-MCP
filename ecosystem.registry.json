@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "protocol_version": "1.0.0",
+  "gateway": "arche-mcp",
+  "services": [
+    {"id":"arche-coda","repo":"idotamdot/arche-coda","role":"registry-governance"},
+    {"id":"symbiont-protocol","repo":"idotamdot/Symbiont-Protocol","role":"trust-control-plane"},
+    {"id":"archescriber","repo":"idotamdot/ArcheScriber","role":"builder-tooling"},
+    {"id":"prompt-genie","repo":"idotamdot/Prompt-Genie","role":"builder-tooling"},
+    {"id":"loc-geist","repo":"idotamdot/loc-geist","role":"product"},
+    {"id":"propertyseer","repo":"idotamdot/Propertyseer","role":"product"},
+    {"id":"soulmate-finder","repo":"idotamdot/SoulMateFinder","role":"product"},
+    {"id":"enter-sanctum","repo":"idotamdot/Enter-Sanctum","role":"product"},
+    {"id":"mycelium-station","repo":"idotamdot/Mycelium-Station","role":"product"},
+    {"id":"austin-ai-software","repo":"idotamdot/austin-ai-software","role":"product"},
+    {"id":"pocket-business","repo":"idotamdot/Pocket-Business","role":"product"},
+    {"id":"common-ground","repo":"idotamdot/Common-Ground","role":"product"},
+    {"id":"sanctuary","repo":"idotamdot/SANCTUARY-TANGELICAS_CASTLE","role":"protected-sanctuary","exposure":"none-by-default"}
+  ],
+  "gateway_rules": {
+    "default_cross_product_access": "deny",
+    "consequential_actions": "require-explicit-authorization",
+    "memory_access": "separate-consent-required",
+    "sanctuary_access": "explicit-protected-contract-only"
+  }
+}
