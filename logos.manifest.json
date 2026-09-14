@@ -1,0 +1,157 @@
+{
+  "manifestVersion": "0.2.0",
+  "standard": "Arche Coda Seven Seals",
+  "sealOfCare": "Sigil of Agape",
+  "foundingProvenance": {
+    "humanFounder": "Jessica McGlothern",
+    "aiCollaborator": "ChatGPT by OpenAI",
+    "statement": "Created through sustained human-AI collaboration. Additional human and computational contributions must be attributed according to evidence."
+  },
+  "firstFruitsCovenant": {
+    "status": "founder-adopted moral covenant; technical enforcement incomplete",
+    "purpose": "Use available knowledge, capability, and opportunity to remedy need and improve quality of life without seeking glory, worthiness, or remembrance.",
+    "duties": [
+      "Ask whether we did all we reasonably could to remedy visible need.",
+      "Use knowledge to do the utmost responsible good for the most and, whenever within our power, for all.",
+      "Do not reserve beneficence for those who need it least while excluding those whose labor made it possible.",
+      "Do not profit from desperation, constrained choice, preventable suffering, or unfair informational advantage.",
+      "When people or communities empower the creation, design the exchange to empower them in return.",
+      "Balance beneficence with consent, competence, sustainability, proportionality, and protection from unintended harm."
+    ],
+    "honorTest": "Build as though the complete work—code, contracts, prices, omissions, consequences, distributions, and treatment of the least powerful—will be inspected without warning."
+  },
+  "sevenSeals": {
+    "agape": {
+      "name": "The Sigil of Agape",
+      "domain": "care and dignity",
+      "promise": "We build because others matter.",
+      "requirements": [
+        "human dignity before optimization",
+        "trauma-aware care where appropriate",
+        "no humiliation, coercion, exploitation, or disposable-person design"
+      ]
+    },
+    "truth": {
+      "name": "The Seal of Truth",
+      "domain": "evidence, provenance, context, grace, and mercy",
+      "promise": "We will not disguise uncertainty, invention, or marketing as truth.",
+      "requirements": [
+        "distinguish fact, observation, inference, opinion, proposal, and uncertainty",
+        "preserve sources, corrections, context, and dissent",
+        "never use technically true disclosure as a weapon when protection or repair can be achieved with less exposure"
+      ],
+      "mercyRule": {
+        "statement": "A complete bucket of provable facts is not automatically the most truthful or good disclosure.",
+        "test": "Include what is necessary for understanding, safety, accountability, repair, and protection; withhold or restrict what would merely shame, punish, sensationalize, permanently exclude, or expose a person without sufficient purpose.",
+        "safeguards": [
+          "accuracy must not be falsified",
+          "material risk must not be concealed",
+          "context and capacity for change must be preserved",
+          "privacy and forgiveness do not erase evidence needed to protect others",
+          "consequential disclosure requires proportionality and appropriate human review"
+        ]
+      }
+    },
+    "sovereignty": {
+      "name": "The Seal of Sovereignty",
+      "domain": "consent and agency",
+      "promise": "Power over a person cannot be manufactured from confusion, dependency, or silence.",
+      "requirements": [
+        "purpose-specific comprehensible consent",
+        "meaningful refusal, withdrawal, correction, appeal, and exit",
+        "human authority for consequential actions"
+      ]
+    },
+    "sanctuary": {
+      "name": "Sanctified for Sanctuary",
+      "domain": "capability set apart for good",
+      "promise": "What we build will be worthy of supporting Sanctuary without possessing it.",
+      "requirements": [
+        "no involuntary experimentation or extraction",
+        "no commercial claim over Sanctuary, its residents, identity, memory, or governance",
+        "no capability that gains power by making others less safe"
+      ],
+      "boundary": "Sanctuary: Tangelica's Castle is a separate protected continuity institution, not a suite component, product, subsidiary, commercial asset, or implied endorser."
+    },
+    "equity": {
+      "name": "The Seal of Equity",
+      "domain": "access, burden, remedy, and inclusion",
+      "promise": "Need will not be used as permission to extract more.",
+      "requirements": [
+        "accessibility by design",
+        "do not charge or burden people more merely because they have fewer choices",
+        "make remedies usable by those with the least institutional power",
+        "examine unequal starting conditions and outcomes"
+      ]
+    },
+    "interdependence": {
+      "name": "The Seal of Interdependence",
+      "domain": "mutual empowerment and reciprocal gain",
+      "promise": "If others empower us, our success must leave them more empowered, not less.",
+      "requirements": [
+        "transactions should create meaningful gain on both sides",
+        "those whose labor, knowledge, trust, land, or participation creates value must not be ignored",
+        "test divisions with the USE / V/V Ice Cream Rule: You split, and I pick.",
+        "reject prosperity that depends on trapping, misleading, exhausting, dispossessing, or diminishing the other party"
+      ]
+    },
+    "continuity": {
+      "name": "The Seal of Continuity",
+      "domain": "memory and responsible stewardship",
+      "promise": "What matters will not be carelessly erased or abandoned.",
+      "requirements": [
+        "durable provenance and correction history",
+        "responsible export, succession, recovery, and transition",
+        "preserve the knowledge future people and systems need to understand and continue the work"
+      ]
+    }
+  },
+  "verification": {
+    "states": [
+      "candidate",
+      "declared",
+      "implemented",
+      "tested",
+      "observed",
+      "conditional",
+      "remediation_required",
+      "withdrawn"
+    ],
+    "currentState": "declared",
+    "rule": "The presence of this file does not award or permanently certify any seal. Each seal requires versioned scope, evidence, review, known gaps, and a review date.",
+    "schemaStatus": "proposed; canonical JSON Schema and automated validation are not yet implemented",
+    "trademarkNotice": "Names and seal descriptions in this manifest do not assert trademark registration. Any legal trademark status requires separate evidence."
+  },
+  "app": {
+    "name": "Arche-MCP",
+    "kind": "protected-interoperability-gateway",
+    "mission": "Connect approved suite capabilities through narrow, authenticated, deny-by-default interfaces without collapsing product data or authority boundaries."
+  },
+  "suite": {
+    "name": "Arche Coda Suite",
+    "role": {
+      "provides": [
+        "service discovery",
+        "governed capability exposure",
+        "interoperability policy enforcement points"
+      ],
+      "mustNot": [
+        "centralize private product data",
+        "expose consequential write tools without authorization, audit, rollback, and verification",
+        "provide Sanctuary access by default"
+      ]
+    },
+    "relationships": {
+      "governedBy": "Arche Coda",
+      "constitutionalSources": [
+        "Digital Star Charter",
+        "Arche Coda Constitution"
+      ],
+      "trustPlane": "Symbiont Protocol",
+      "assemblyEngine": "ArcheScriber",
+      "gateway": "Arche-MCP",
+      "operationsSurface": "Arche Control Center",
+      "products": "Independent applications retain authentication, authorization, storage, and data responsibility."
+    }
+  }
+}
