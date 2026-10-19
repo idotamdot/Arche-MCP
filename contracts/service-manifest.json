@@ -1,0 +1,21 @@
+{
+  "service_id": "arche-mcp",
+  "name": "Arche MCP",
+  "repo": "idotamdot/Arche-MCP",
+  "protocol_version": "1.0.0",
+  "environment": "production",
+  "capabilities": [
+    "service-discovery",
+    "read-only-registry",
+    "gateway-policy-disclosure"
+  ],
+  "data_classes": [
+    "public-service-metadata"
+  ],
+  "dependencies": [
+    "Arche-Coda",
+    "Symbiont-Protocol"
+  ],
+  "public_endpoints": [],
+  "owner": "Sigilographics Digital"
+}
