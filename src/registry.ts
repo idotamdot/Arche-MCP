@@ -1,3 +1,5 @@
+import { RegistryServicesSchema } from "./contracts";
+
 export type ServiceRole =
   | 'registry-governance'
   | 'trust-control-plane'
@@ -37,6 +39,9 @@ export const services: EcosystemService[] = [
     exposure: 'none-by-default',
   },
 ];
+
+// Fail closed during build/runtime startup if the published registry violates its contract.
+RegistryServicesSchema.parse(services);
 
 export function getService(id: string): EcosystemService | undefined {
   return services.find((service) => service.id === id);
