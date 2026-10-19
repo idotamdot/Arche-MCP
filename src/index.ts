@@ -71,12 +71,22 @@ function createServer() {
     async () =>
       jsonText({
         mode: "read-only-registry",
+        protocol_version: protocolVersion,
         authentication: "bearer-token-required",
         default_cross_product_access: "deny",
         consequential_actions: "not-exposed",
         memory_access: "not-exposed",
         sanctuary_access: "none-by-default",
-        note: "Write/action tools require a separately reviewed authorization and audit design before exposure.",
+        contract_status: {
+          service_registry: "runtime-validated",
+          consent_receipt: "schema-defined; not accepted as a gateway action",
+          authorization_decision: "schema-defined; not accepted as a gateway action",
+          provenance_record: "schema-defined; not accepted as a gateway action",
+          memory_record: "schema-defined; memory access remains disabled",
+          audit_event: "schema-defined; action audit pipeline not exposed",
+          service_manifest: "schema-defined; per-product manifests are declarations, not proof of integration",
+        },
+        note: "Registry visibility does not grant authority. Write/action tools require separately reviewed authorization, audit, rollback, and verification controls before exposure.",
       }),
   );
 
