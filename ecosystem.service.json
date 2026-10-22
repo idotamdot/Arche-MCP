@@ -1,0 +1,70 @@
+{
+  "service_id": "arche-mcp",
+  "name": "Arche MCP",
+  "repo": "idotamdot/Arche-MCP",
+  "protocol_version": "1.0.0",
+  "environment": "production",
+  "kind": "interoperability-gateway",
+  "public_url": "https://mcp.arche-coda.com",
+  "lifecycle": "deployed-verification",
+  "readiness_contract": "README.md",
+  "capabilities": [
+    "service-discovery",
+    "read-only-registry-access",
+    "remote-mcp-transport"
+  ],
+  "data_classes": [
+    "public-registry-metadata",
+    "service-health-metadata"
+  ],
+  "dependencies": [
+    "arche-coda",
+    "symbiont-protocol"
+  ],
+  "public_endpoints": [
+    {
+      "path": "/health",
+      "method": "GET",
+      "purpose": "Health and status; live request not yet verified"
+    },
+    {
+      "path": "/mcp",
+      "method": "POST",
+      "purpose": "Remote MCP endpoint; bearer token required; authenticated protocol behavior not yet verified"
+    }
+  ],
+  "owner": "Sigilographics Digital",
+  "authorization_boundary": "product-local",
+  "cross_product_access": "deny-by-default",
+  "secret_values_allowed": false,
+  "domains": [
+    "mcp.arche-coda.com"
+  ],
+  "domain_routing": {
+    "provider": "cloudflare-workers",
+    "worker_name": "arche-mcp",
+    "custom_domain_status": "attached-and-enabled",
+    "dns_record": {
+      "provider": "cloudflare-dns",
+      "record_type": "AAAA",
+      "target": "100::",
+      "proxied": true,
+      "status": "present"
+    },
+    "alternate_association": {
+      "provider": "vercel",
+      "project_name": "arche-mcp",
+      "status": "attached-and-verified",
+      "cleanup": "pending"
+    },
+    "routing_verification": "provider-configuration-confirmed; live HTTP/MCP requests unverified"
+  },
+  "deployment_health": {
+    "state": "partial",
+    "worker_script": "present",
+    "custom_domain": "attached-and-enabled",
+    "runtime_health": "unverified",
+    "authenticated_mcp": "unverified",
+    "unauthenticated_rejection": "unverified"
+  }
+}
