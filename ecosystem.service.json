@@ -7,7 +7,6 @@
   "kind": "interoperability-gateway",
   "public_url": "https://mcp.arche-coda.com",
   "lifecycle": "deployed-verification",
-  "readiness_contract": "README.md",
   "capabilities": [
     "service-discovery",
     "read-only-registry-access",
