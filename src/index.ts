@@ -1,7 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/server";
 import { createMcpHandler } from "agents/mcp/server";
 import { z } from "zod";
-import { getService, protocolVersion, services } from "./registry";
+import { getService, loadRegistry, protocolVersion } from "./registry";
 
 interface Env {
   ARCHE_MCP_TOKEN?: string;
@@ -24,15 +24,21 @@ function createServer() {
         "List registered Arche Coda ecosystem services. Registry visibility never grants private-data or cross-product action access.",
       inputSchema: {},
     },
-    async () =>
-      jsonText({
+    async () => {
+      const registry = await loadRegistry();
+      return jsonText({
         protocol_version: protocolVersion,
         gateway: "arche-mcp",
         access_mode: "read-only-registry",
         default_cross_product_access: "deny",
         sanctuary_access: "none-by-default",
-        services,
-      }),
+        registry_source: registry.source,
+        registry_checked_at: registry.checked_at,
+        registry_schema_version: registry.schema_version,
+        ...(registry.warning ? { registry_warning: registry.warning } : {}),
+        services: registry.services,
+      });
+    },
   );
 
   server.registerTool(
@@ -45,7 +51,8 @@ function createServer() {
       },
     },
     async ({ service_id }) => {
-      const service = getService(service_id);
+      const registry = await loadRegistry();
+      const service = getService(service_id, registry.services);
       if (!service) {
         return {
           isError: true,
@@ -55,6 +62,10 @@ function createServer() {
 
       return jsonText({
         protocol_version: protocolVersion,
+        registry_source: registry.source,
+        registry_checked_at: registry.checked_at,
+        registry_schema_version: registry.schema_version,
+        ...(registry.warning ? { registry_warning: registry.warning } : {}),
         authorization_note:
           "Registry visibility does not authorize access to another product's private data or actions.",
         service,
@@ -78,7 +89,7 @@ function createServer() {
         memory_access: "not-exposed",
         sanctuary_access: "none-by-default",
         contract_status: {
-          service_registry: "runtime-validated",
+          service_registry: "live-read-from-arche-coda-with-explicit-local-fallback",
           consent_receipt: "schema-defined; not accepted as a gateway action",
           authorization_decision: "schema-defined; not accepted as a gateway action",
           provenance_record: "schema-defined; not accepted as a gateway action",
