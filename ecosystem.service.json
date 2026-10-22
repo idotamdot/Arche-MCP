@@ -50,13 +50,7 @@
       "proxied": true,
       "status": "present"
     },
-    "alternate_association": {
-      "provider": "vercel",
-      "project_name": "arche-mcp",
-      "status": "attached-and-verified",
-      "cleanup": "pending"
-    },
-    "routing_verification": "provider-configuration-confirmed; live HTTP/MCP requests unverified"
+    "routing_verification": "Cloudflare Worker custom domain is configured; no arche-mcp Vercel project was found in the connected Vercel team inventory on 2026-10-22; live HTTP/MCP requests remain unverified."
   },
   "deployment_health": {
     "state": "partial",
@@ -65,5 +59,11 @@
     "runtime_health": "unverified",
     "authenticated_mcp": "unverified",
     "unauthenticated_rejection": "unverified"
+  },
+  "registry_source": {
+    "authority": "idotamdot/arche-coda/ecosystem.manifest.json",
+    "mode": "read-only-live-fetch",
+    "fallback": "local-core-service-metadata",
+    "fallback_disclosure": "explicit"
   }
 }
