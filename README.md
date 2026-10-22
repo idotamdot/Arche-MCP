@@ -1,5 +1,9 @@
 # Arche-MCP
 
+**Canonical custom domain:** https://mcp.arche-coda.com
+
+Cloudflare confirms `mcp.arche-coda.com` is attached and enabled for the `arche-mcp` Worker. The remote MCP endpoint is `/mcp` and requires a bearer token; `GET /health` is the health/status route. Domain attachment alone does not prove that either route has passed a live request test.
+
 Arche-MCP is the protected interoperability gateway for the Arche Coda ecosystem.
 
 ## Current deployment model
