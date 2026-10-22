@@ -2,7 +2,7 @@
 
 **Canonical custom domain:** https://mcp.arche-coda.com
 
-Cloudflare confirms `mcp.arche-coda.com` is attached and enabled for the `arche-mcp` Worker. The remote MCP endpoint is `/mcp` and requires a bearer token; `GET /health` is the health/status route. Domain attachment alone does not prove that either route has passed a live request test.
+Cloudflare confirms `mcp.arche-coda.com` is attached and enabled for the `arche-mcp` Worker. Vercel also reports this hostname attached to its `arche-mcp` project, so the registry records that second association as a routing ambiguity to resolve—not as proof of traffic destination. Confirm the active DNS target and live requests before declaring routing healthy. The remote MCP endpoint is `/mcp` and requires a bearer token; `GET /health` is the health/status route. Automated page retrieval could not access these URLs, so live health, unauthenticated rejection, and authenticated MCP operation remain unverified.
 
 Arche-MCP is the protected interoperability gateway for the Arche Coda ecosystem.
 
