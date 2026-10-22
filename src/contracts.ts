@@ -94,6 +94,8 @@ export const RegistryServiceSchema = z.object({
   role: z.enum([
     "registry-governance",
     "trust-control-plane",
+    "interoperability-gateway",
+    "operational-intelligence",
     "builder-tooling",
     "product",
     "protected-sanctuary",
