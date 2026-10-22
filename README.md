@@ -2,7 +2,7 @@
 
 **Canonical custom domain:** https://mcp.arche-coda.com
 
-Cloudflare confirms `mcp.arche-coda.com` is attached and enabled for the `arche-mcp` Worker. Vercel also reports this hostname attached to its `arche-mcp` project, so the registry records that second association as a routing ambiguity to resolve—not as proof of traffic destination. Confirm the active DNS target and live requests before declaring routing healthy. The remote MCP endpoint is `/mcp` and requires a bearer token; `GET /health` is the health/status route. The automated request to `GET /health` returned a Cloudflare challenge page (HTTP 403), so it did not reach a verifiable health response. Live health, unauthenticated rejection, and authenticated MCP operation remain unverified. The hostname is also still associated with a separate Vercel project named `arche-mcp`; the Worker domain and Cloudflare DNS are configured for the intended MCP runtime, but that unused Vercel association remains a cleanup item.
+Cloudflare confirms `mcp.arche-coda.com` is attached and enabled for the `arche-mcp` Worker. The connected Vercel team inventory no longer returns an `arche-mcp` project, so the previous duplicate project association is no longer present in that inventory. This confirms provider inventory cleanup, not live request routing. The remote MCP endpoint is `/mcp` and requires a bearer token; `GET /health` is the health/status route. Automated `GET /health` previously returned a Cloudflare challenge page (HTTP 403), so Worker health and MCP protocol behavior still need request-level verification.
 
 Arche-MCP is the protected interoperability gateway for the Arche Coda ecosystem.
 
