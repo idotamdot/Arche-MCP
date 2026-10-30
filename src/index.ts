@@ -143,6 +143,13 @@ function jsonResponse(value: unknown): Response {
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    // Verified Cloudflare edge geolocation, never a client-provided country header.
+    const country = request.cf?.country;
+    const denied = new Set(['CU','IR','KP','SY','RU','BY','CN']);
+    if (typeof country !== 'string' || !/^[A-Z]{2}$/.test(country))
+      return new Response('Region unavailable', { status:403, headers:{'Cache-Control':'no-store'} });
+    if (denied.has(country))
+      return new Response('This service is unavailable in your region', { status:451, headers:{'Cache-Control':'no-store'} });
     const url = new URL(request.url);
 
     if (url.pathname === "/" && request.method === "GET") {
