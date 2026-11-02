@@ -56,3 +56,7 @@ After deployment, verify `/health` first. Then connect an MCP client to the Work
 ## Security direction
 
 Write tools, product-private-data access, memory access, and consequential actions must not be added until Arche Coda authorization, audit, correction/rollback, and verification controls are implemented and reviewed.
+
+## Development collaborator roadmap
+
+Arche MCP's registry helps an assistant discover declared services, but it does **not** currently read repository files, remember tasks, run typechecks or control Codex. The proposed next phase is a permission-scoped, read-only developer-context gateway so collaborators can inspect existing implementations before modifying them. See [Developer Collaboration Integration Plan](docs/DEVELOPER_COLLABORATION_PLAN.md). This is a proposal, not an exposed MCP capability.
